@@ -10,6 +10,8 @@
     "production": "lineman clean build && node production.js"
   },
   "dependencies": {
+    "angular-pageslide-directive": "^2.1.3",
+    "angular-sidebar": "^1.1.0",
     "angular-simple-sidebar": "^1.3.1",
     "express": "",
     "lineman": "~0.37.0",

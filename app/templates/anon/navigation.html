@@ -1,4 +1,4 @@
-<nav class="navbar center floating-nav" role="navigation" ng-controller="NavbarController">
+<nav class="navbar center floating-nav" role="navigation">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4">
@@ -15,8 +15,15 @@
                 <a href="#" class="brand">Logo</a>
             </div>
             <div class="col-xs-4">
-                <a href="#"></a>
+                <button href="#" ng-click="toggle()">MENU</button>
             </div>
         </div>
     </div>
 </nav>
+<div pageslide ps-open="checked" ps-speed="2" class="sidebar">
+    <div style="padding:20px" id="demo-right">
+        <h2>Hello Pageslidoo</h2>
+        <p>Put here whatever you want</p>
+        <a ng-click="toggle()" class="button">Close</a>
+    </div>
+</div>

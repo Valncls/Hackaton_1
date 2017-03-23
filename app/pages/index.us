@@ -11,8 +11,10 @@
 
 <body class="fullscreen">
 
-    <div ui-view='navbar'></div>
+    <div ui-view='navigation'></div>
     <div class="fullscreen" ui-view='content'></div>
+
+
 
     <script type="text/javascript" src="<%= js %>"></script>
 </body>

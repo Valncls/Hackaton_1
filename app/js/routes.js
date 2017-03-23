@@ -7,9 +7,9 @@ angular.module('app')
                     access: AccessLevels.anon
                 },
                 views: {
-                    'navbar@': {
-                        templateUrl: 'anon/navbar.html',
-                        controller: 'NavbarController'
+                    'navigation@': {
+                        templateUrl: 'anon/navigation.html',
+                        controller: 'NavigationController'
                     }
                 }
             })
@@ -28,38 +28,6 @@ angular.module('app')
                     'content@': {
                         templateUrl: 'anon/map.html',
                         controller: 'MapController'
-                    }
-                }
-            });
-        $stateProvider
-            .state('user', {
-                abstract: true,
-                url: '/user',
-                views: {
-                    'navbar@': {
-                        templateUrl: 'user/navbar.html',
-                        controller: 'NavbarController'
-                    }
-                },
-                data: {
-                    access: AccessLevels.user
-                }
-            })
-            .state('user.dashboard', {
-                url: '/dashboard',
-                views: {
-                    'content@': {
-                        templateUrl: 'user/dashboard.html',
-                        controller: 'DashboardController'
-                    }
-                }
-            })
-            .state('user.profile', {
-                url: '/profile',
-                views: {
-                    'content@': {
-                        templateUrl: 'user/profile.html',
-                        controller: 'ProfileController'
                     }
                 }
             });

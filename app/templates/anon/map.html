@@ -1,9 +1,11 @@
 <div class="fullscreen-content" map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSvjGoZxXRQtxtGbsjlA8zV5vsp_kCFQY">
     <ng-map id='webcam-map'
         class="map"
-        center='[0, 0.83037]'
+        center='[54.526, 15.255]'
         zoom='5'
+        map-type-control="false"
         map-type-control-options="{style:'HORIZONTAL_BAR', position:'BOTTOM_CENTER'}"
-        styles="{{mapStyle}}">
+        styles="{{mapStyle}}"
+        street-view-control="false">
     </ng-map>
 </div>
