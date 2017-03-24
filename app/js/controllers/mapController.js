@@ -16,16 +16,11 @@ angular.module('app')
                     lat: bounds.f.f.toFixed(3),
                     lng: bounds.b.b.toFixed(3)
                 };
-                console.log(bounds);
-                console.log('ne', $scope.neBound);
-                console.log('sw', $scope.swBound);
                 $scope.zoom = map.getZoom();
 
                 console.log("Getting new data");
                 ApiService.getAllInBox($scope.neBound, $scope.swBound, $scope.zoom).then(function(res) {
-                    console.log(res);
                     $scope.cams = res.data.result.webcams;
-                    console.log($scope.cams);
                 }, function(err) {
                     console.log(err);
                 });
@@ -39,7 +34,6 @@ angular.module('app')
         $scope.gotoRandom = function() {
             ApiService.getRandom().then(function(res) {
                 $scope.webcamRandom = res.data.result.webcams[0];
-                console.log($scope.webcamRandom);
                 NgMap.getMap().then(function(map) {
                     map.panTo({lat: $scope.webcamRandom.location.latitude, lng: $scope.webcamRandom.location.longitude});
                     map.setZoom(12);
@@ -55,7 +49,6 @@ angular.module('app')
          $scope.$on('goto', function (event, city) {
             console.log('moving to', city);
             GeocodingService.getGeocoding(city).then(function(res) {
-                console.log('res geocoding', res.data.results[0].geometry.location);
                 NgMap.getMap().then(function(map) {
                     map.panTo({lat: res.data.results[0].geometry.location.lat, lng: res.data.results[0].geometry.location.lng});
                     map.setZoom(12);
