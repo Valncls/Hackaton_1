@@ -10,9 +10,11 @@ angular.module('app')
                 let bounds = map.getBounds();
                 $scope.neBound = {lat: bounds.f.f.toFixed(3), lng: bounds.f.b.toFixed(3)};
                 $scope.swBound = {lat: bounds.b.f.toFixed(3), lng: bounds.b.b.toFixed(3)};
-                console.log(bounds);
+                $scope.zoom = map.getZoom();
+
                 console.log("Getting new data");
-                ApiService.getAllInBox($scope.neBound, $scope.swBound).then(function(res) {
+                ApiService.getAllInBox($scope.neBound, $scope.swBound, $scope.zoom).then(function(res) {
+                    console.log(res);
                     $scope.cams = res.data.result.webcams;
                     console.log($scope.cams);
                 }, function(err) {
