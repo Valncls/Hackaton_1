@@ -3,10 +3,10 @@ var myApp = angular.module('app')
     .service('ApiService', function($http) {
         return {
             getRandom: function() {
-                return $http.get('https://webcamstravel.p.mashape.com/webcams/list/orderby=random?show=webcams:url&mashape-key=' + API);
+                return $http.get('https://webcamstravel.p.mashape.com/webcams/list/orderby=random?show=webcams:url,location&mashape-key=' + API);
             },
             getAllInBox: function(neBound, swBound, zoom) {
-                return $http.get(`https://webcamstravel.p.mashape.com/webcams/map/${neBound.lat},${neBound.lng},${swBound.lat},${swBound.lng},10?show=webcams:url,location&mashape-key=${API}&limit=200,1`);
+                return $http.get(`https://webcamstravel.p.mashape.com/webcams/map/${neBound.lat},${neBound.lng},${swBound.lat},${swBound.lng},${zoom}?show=webcams:url,location&mashape-key=${API}&limit=200,1`);
             }
         };
     });

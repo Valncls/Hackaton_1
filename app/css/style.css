@@ -84,6 +84,18 @@ margin-top: 10px;
   margin-right: 10px;
 }
 
- #submit {
-   margin-top: 10px;
- }
+.top-right {
+    position: absolute;
+    right: auto;
+    top: 60px;
+    right: 10px;
+    z-index: 90000000000;
+    color: white
+}
+#submit {
+  margin-top: 10px;
+}
+.input-group-btn {
+    margin-right:0;
+    width: 34px;
+}

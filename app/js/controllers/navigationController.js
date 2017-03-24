@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('NavigationController', function($scope, Auth, CurrentUser) {
+    .controller('NavigationController', function($scope, Auth, CurrentUser, $rootScope) {
         $scope.checked = false;
         $scope.size = '100px';
         $scope.toggle = function() {
@@ -16,4 +16,14 @@ angular.module('app')
             alert('Close');
             console.log($scope);
         };
+
+        $scope.random = function() {
+            $rootScope.$broadcast('random', 'message');
+        };
+
+        $scope.search = function() {
+            console.log($scope.inputSearch);
+            $rootScope.$broadcast('goto', $scope.inputSearch);
+        };
+        $scope.inputSearch = '';
     });
