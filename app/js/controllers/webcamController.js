@@ -3,4 +3,9 @@ angular.module('app')
         dataService.getAll().then(function(res) {
             $scope.webcam = res.data;
 });
+dataService.getRandom().then(function(res) {
+    $scope.webcamRandom = res.data;
         });
+        $scope.show = false;
+    
+});

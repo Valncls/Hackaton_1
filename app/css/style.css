@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+
+#modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#link {
+    position: relative;
+    z-index: 3;
+}
