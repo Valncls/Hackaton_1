@@ -12,10 +12,18 @@
         <custom-marker
             ng-repeat="cam in cams track by $index"
             id="custom-marker-{{$index}}"
-            position="{{cam.location.latitude}}, {{cam.location.longitude}}">
+            position="{{cam.location.latitude}}, {{cam.location.longitude}}"
+            on-click="markerClicked(cam)">
             <div>
                 <img style="height: 100px; width:auto" src="/img/marqueur.png"/>
             </div>
         </custom-marker>
     </ng-map>
+
+    <div ng-if='show' id='modal'>
+        <button type="button" name="button" ng-click="show = !show"><span class="glyphicon glyphicon-remove-circle"></span></button>
+        <div id='link'><a name="lkr-timelapse-player" data-id="1204996144" data-play="day" href="//lookr.com/1204996144" target="_blank">Toulon</a>
+            <script async type="text/javascript" src="//api.lookr.com/embed/script/timelapse.js"></script>
+        </div>
+    </div>
 </div>

@@ -8,8 +8,14 @@ angular.module('app')
             console.log("Updating bounds");
             NgMap.getMap().then(function(map) {
                 let bounds = map.getBounds();
-                $scope.neBound = {lat: bounds.f.f.toFixed(3), lng: bounds.f.b.toFixed(3)};
-                $scope.swBound = {lat: bounds.b.f.toFixed(3), lng: bounds.b.b.toFixed(3)};
+                $scope.neBound = {
+                    lat: bounds.f.f.toFixed(3),
+                    lng: bounds.f.b.toFixed(3)
+                };
+                $scope.swBound = {
+                    lat: bounds.b.f.toFixed(3),
+                    lng: bounds.b.b.toFixed(3)
+                };
                 $scope.zoom = map.getZoom();
 
                 console.log("Getting new data");
@@ -27,6 +33,16 @@ angular.module('app')
 
         $scope.updateBounds();
 
+        ApiService.getRandom().then(function(res) {
+            $scope.webcamRandom = res.data;
+        });
+
+        $scope.show = false;
+
+        $scope.markerClicked = function(event, cam) {
+            console.log('click');
+            $scope.show = !$scope.show;
+        };
 
         $scope.mapStyle = [{
                 "elementType": "geometry",
