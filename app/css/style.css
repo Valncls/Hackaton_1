@@ -15,3 +15,53 @@ body {
     position: relative;
     z-index: 3;
 }
+
+h2{
+  color: black;
+  margin-top: 80px;
+  font-size: 30px;
+}
+
+#slider{
+  background-color: white;
+}
+
+#menu {
+float: right;
+}
+
+.glyphicon{
+  margin-right: 10px;
+
+}
+
+#close {
+  margin-top: 100px;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0 ;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.social{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#facebook {
+  margin-right: 10px;
+}
+
+#twitter {
+  margin-right: 10px;
+}
+#github {
+  margin-right: 10px;
+}

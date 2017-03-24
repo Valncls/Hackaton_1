@@ -13,15 +13,7 @@ angular.module('app')
                     }
                 }
             })
-            .state('anon.home', {
-                url: '/',
-                views: {
-                    'content@': {
-                        templateUrl: 'anon/home.html',
-                        controller: 'WebcamController'
-                    }
-                }
-            })
+          
             .state('anon.map', {
                 url: '/map',
                 views: {
