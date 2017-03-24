@@ -6,6 +6,16 @@
         map-type-control="false"
         map-type-control-options="{style:'HORIZONTAL_BAR', position:'BOTTOM_CENTER'}"
         styles="{{mapStyle}}"
-        street-view-control="false">
+        street-view-control="false"
+        on-dragend="updateBounds()"
+        on-zoom_changed="updateBounds()">
+        <custom-marker
+            ng-repeat="cam in cams track by $index"
+            id="custom-marker-{{$index}}"
+            position="{{cam.location.latitude}}, {{cam.location.longitude}}">
+            <div>
+                <img style="height: 100px; width:auto" src="/img/marqueur.png"/>
+            </div>
+        </custom-marker>
     </ng-map>
 </div>
